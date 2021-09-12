@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/itemHome"
+        android:icon="@drawable/ic_baseline_home_24"
+        android:title="Home"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/itemResepku"
+        android:icon="@drawable/ic_baseline_post_add_24"
+        android:title="Resepku"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/itemList"
+        android:icon="@drawable/ic_baseline_assignment_24"
+        android:title="List Resep"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/itemNotifikasi"
+        android:icon="@drawable/ic_baseline_notifications_active_24"
+        android:title="Notifikasi"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/itemAkun"
+        android:icon="@drawable/ic_baseline_person_24"
+        android:title="Akun"
+        app:showAsAction="always" />
+</menu>

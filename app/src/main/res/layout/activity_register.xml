@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.ActivityRegister">
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="0dp"
+                android:layout_height="229dp"
+                android:layout_marginStart="64dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="64dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/makanku" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayout4"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="32dp"
+                android:hint="Username"
+                app:boxCornerRadiusBottomEnd="60px"
+                app:boxCornerRadiusBottomStart="60px"
+                app:boxCornerRadiusTopEnd="60px"
+                app:boxCornerRadiusTopStart="60px"
+                app:hintEnabled="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView3">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/txtUsernameRegis"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayout5"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="32dp"
+                android:hint="Email"
+                app:boxCornerRadiusBottomEnd="60px"
+                app:boxCornerRadiusBottomStart="60px"
+                app:boxCornerRadiusTopEnd="60px"
+                app:boxCornerRadiusTopStart="60px"
+                app:hintEnabled="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout4">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/txtEmailRegis"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayout6"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="32dp"
+                android:hint="Password"
+                app:boxCornerRadiusBottomEnd="60px"
+                app:boxCornerRadiusBottomStart="60px"
+                app:boxCornerRadiusTopEnd="60px"
+                app:boxCornerRadiusTopStart="60px"
+                app:hintEnabled="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout5">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/txtPwdRegis"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayout7"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="32dp"
+                android:hint="Ulangi Password"
+                app:boxCornerRadiusBottomEnd="60px"
+                app:boxCornerRadiusBottomStart="60px"
+                app:boxCornerRadiusTopEnd="60px"
+                app:boxCornerRadiusTopStart="60px"
+                app:hintEnabled="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout6">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/txtPwdRepeatRegis"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:id="@+id/btnRegisR"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="32dp"
+                app:cornerRadius="60dp"
+                android:text="Button"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout7" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

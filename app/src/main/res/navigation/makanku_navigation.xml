@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/makanku_navigation"
+    app:startDestination="@id/itemHome">
+
+    <fragment
+        android:id="@+id/itemHome"
+        android:name="id.ac.ubaya.informatika.midtermproject_160419007.view.FragmentHome"
+        android:label="Home"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/itemList"
+        android:name="id.ac.ubaya.informatika.midtermproject_160419007.view.FragmentListResepMakanan"
+        android:label="List Resep "
+        tools:layout="@layout/fragment_list_resep_makanan" />
+    <fragment
+        android:id="@+id/itemNotifikasi"
+        android:name="id.ac.ubaya.informatika.midtermproject_160419007.view.FragmentNotifikasi"
+        android:label="Notifikasi"
+        tools:layout="@layout/fragment_notifikasi" />
+    <fragment
+        android:id="@+id/itemAkun"
+        android:name="id.ac.ubaya.informatika.midtermproject_160419007.view.FragmentProfil"
+        android:label="Profil"
+        tools:layout="@layout/fragment_profil" />
+    <fragment
+        android:id="@+id/itemResepku"
+        android:name="id.ac.ubaya.informatika.midtermproject_160419007.view.FragmentResepku"
+        android:label="Resepku"
+        tools:layout="@layout/fragment_resepku" />
+</navigation>

@@ -1,0 +1,44 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.MidTermProject_160419007" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/primaryColor</item>
+        <item name="colorPrimaryVariant">@color/primaryLightColor</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/secondaryColor</item>
+        <item name="colorSecondaryVariant">@color/secondaryLightColor</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+        <item name="android:colorBackground">@color/white</item>
+    </style>
+
+    <style name="heading1" parent="TextAppearance.MaterialComponents.Headline1">
+        <item name="fontFamily">@font/poppins_semibold</item>
+        <item name="android:textSize">36sp</item>
+    </style>
+
+    <style name="heading2" parent="TextAppearance.MaterialComponents.Headline1">
+        <item name="fontFamily">@font/poppins_semibold</item>
+        <item name="android:textSize">24sp</item>
+    </style>
+    <style name="body1" parent="TextAppearance.MaterialComponents.Headline1">
+        <item name="fontFamily">@font/pt_serif_bold</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">@color/white</item>
+
+    </style>
+    <style name="body2" parent="TextAppearance.MaterialComponents.Subtitle1">
+        <item name="fontFamily">@font/pt_serif_bold</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="body3" parent="TextAppearance.MaterialComponents.Body1">
+        <item name="fontFamily">@font/pt_serif_bold</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+
+</resources>
