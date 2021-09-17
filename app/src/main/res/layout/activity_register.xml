@@ -135,8 +135,8 @@
                 android:layout_marginStart="32dp"
                 android:layout_marginTop="24dp"
                 android:layout_marginEnd="32dp"
+                android:text="register"
                 app:cornerRadius="60dp"
-                android:text="Button"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textInputLayout7" />

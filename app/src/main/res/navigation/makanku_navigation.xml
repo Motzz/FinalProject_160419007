@@ -9,7 +9,11 @@
         android:id="@+id/itemHome"
         android:name="id.ac.ubaya.informatika.midtermproject_160419007.view.FragmentHome"
         android:label="Home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_itemHome_to_fragmentDetailResep"
+            app:destination="@id/fragmentDetailResep" />
+    </fragment>
     <fragment
         android:id="@+id/itemList"
         android:name="id.ac.ubaya.informatika.midtermproject_160419007.view.FragmentListResepMakanan"
@@ -29,5 +33,23 @@
         android:id="@+id/itemResepku"
         android:name="id.ac.ubaya.informatika.midtermproject_160419007.view.FragmentResepku"
         android:label="Resepku"
-        tools:layout="@layout/fragment_resepku" />
+        tools:layout="@layout/fragment_resepku" >
+        <action
+            android:id="@+id/action_itemResepku_to_fragmentTambahResepku"
+            app:destination="@id/fragmentTambahResepku" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentTambahResepku"
+        android:name="id.ac.ubaya.informatika.midtermproject_160419007.view.FragmentTambahResepku"
+        android:label="Tambah Resep"
+        tools:layout="@layout/fragment_tambah_resepku" />
+    <fragment
+        android:id="@+id/fragmentDetailResep"
+        android:name="id.ac.ubaya.informatika.midtermproject_160419007.view.FragmentDetailResep"
+        android:label="Detail Resep"
+        tools:layout="@layout/fragment_detail_resep" >
+        <argument
+            android:name="foodID"
+            app:argType="string" />
+    </fragment>
 </navigation>
