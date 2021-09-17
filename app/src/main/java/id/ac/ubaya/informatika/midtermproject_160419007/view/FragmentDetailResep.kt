@@ -27,7 +27,7 @@ class FragmentDetailResep : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         if (arguments!=null)
         {
-            Global.idResepList=FragmentDetailResepArgs.fromBundle(requireArguments()).foodID
+            Global.foodName=FragmentDetailResepArgs.fromBundle(requireArguments()).foodName
         }
 
         viewModel = ViewModelProvider(this).get(DetailListResep::class.java)
@@ -38,8 +38,8 @@ class FragmentDetailResep : Fragment() {
     fun observeViewModel() {
         viewModel.resepLD.observe(viewLifecycleOwner, Observer {
             txtNameFood.text=it.name.toString()
-            txtIngridients.text= it.ingredients.toString()
-            txtSteps.text=it.steps.toString()
+            txtIngridients.text= it.ingredients!!.joinToString("\n\n")
+            txtSteps.text=it.steps!!.joinToString("\n\n")
             imageViewDetailResep.loadImage(it.imageURL.toString(),progressBarDetailResep)
 
         })

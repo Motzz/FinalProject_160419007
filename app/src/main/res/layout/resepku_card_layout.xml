@@ -55,9 +55,9 @@
 
             <Button
                 android:id="@+id/btnDeleteResepku"
-                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="43dp"
+                android:layout_height="49dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
                 app:icon="@drawable/ic_baseline_delete_forever_24"

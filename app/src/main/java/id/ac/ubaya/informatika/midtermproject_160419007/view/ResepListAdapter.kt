@@ -36,7 +36,7 @@ class ResepListAdapter(val resepList: ArrayList<Resep>): RecyclerView.Adapter<Re
             imageView2.loadImage(resepList[position].imageURL.toString(),holder.view.progressLoadResep)
 
             btnDetailResep.setOnClickListener {
-                val action = FragmentHomeDirections.actionItemHomeToFragmentDetailResep(resepList[position].id.toString())//kirim data id
+                val action = FragmentHomeDirections.actionFragmentDetail(resepList[position].name.toString())//kirim data id
                 Navigation.findNavController(it).navigate(action)
             }
         }

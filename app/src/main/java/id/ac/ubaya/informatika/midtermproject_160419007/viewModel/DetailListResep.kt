@@ -22,13 +22,41 @@ class DetailListResep(application: Application): AndroidViewModel(application) {
 
     fun fetch() {
         queueR= Volley.newRequestQueue(getApplication())
-        var url="https://api.npoint.io/a79c5aa461093935180e?id=${Global.idResepList}"
+        var url="https://api.npoint.io/a79c5aa461093935180e?"
         var stringRequest= StringRequest(
             Request.Method.GET,url,
             {response ->
-                val sType=object : TypeToken<List<Resep>>(){ }.type
-                val result1: Resep? = Gson().fromJson(response, Resep::class.java)
-                resepLD.value=result1
+
+                val sType=object : TypeToken<Resep>(){ }.type
+                val result1: List<Resep> = Gson().fromJson(response, Array<Resep>::class.java).toList()
+
+                    if (Global.foodName=="Crock Pot Roast")
+                    {
+                        resepLD.value=result1[0]
+                    }
+                    else if (Global.foodName=="Roasted Asparagus")
+                    {
+                        resepLD.value=result1[1]
+
+                    }
+                    else if (Global.foodName=="Curried Lentils and Rice")
+                    {
+                        resepLD.value=result1[2]
+
+                    }
+                    else if (Global.foodName=="Big Night Pizza")
+                    {
+                        resepLD.value=result1[3]
+
+                    }
+                    else if (Global.foodName=="Cranberry and Apple")
+                    {
+                        resepLD.value=result1[4]
+                    }
+                    else if (Global.foodName=="Mic's Yorkshire Puds")
+                    {
+                        resepLD.value=result1[5]
+                    }
 
                 Log.d("berhasil",response.toString())
 
