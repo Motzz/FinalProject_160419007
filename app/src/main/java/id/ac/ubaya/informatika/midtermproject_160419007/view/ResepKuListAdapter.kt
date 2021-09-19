@@ -37,7 +37,7 @@ class ResepKuListAdapter(val resepku:ArrayList<Resepku>):RecyclerView.Adapter<Re
             txtMakananResepku.text=resepku[position].nama
             imgResepku.loadImage(resepku[position].imageURL.toString(),holder.view.progressLoadCardResepKu)
             btnEditResepku.setOnClickListener {
-                val action = FragmentResepkuDirections.actionItemResepkuToFragmentTambahResepku()//kirim data id
+                val action = FragmentResepkuDirections.actionItemResepkuToFragmentEditResepku(resepku[position].nama.toString())//kirim data id
                 Navigation.findNavController(it).navigate(action)
             }
 

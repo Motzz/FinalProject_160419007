@@ -5,7 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.Navigation
 import id.ac.ubaya.informatika.midtermproject_160419007.R
+import kotlinx.android.synthetic.main.fragment_tambah_resepku.*
 
 
 class FragmentTambahResepku : Fragment() {
@@ -18,6 +20,10 @@ class FragmentTambahResepku : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        btnAddResepku.setOnClickListener {
+            val action = FragmentTambahResepkuDirections.actionFragmentTambahResepkuToItemResepku()
+            Navigation.findNavController(it).navigate(action)
+        }
     }
 
 
