@@ -28,7 +28,16 @@
         android:id="@+id/itemAkun"
         android:name="id.ac.ubaya.informatika.midtermproject_160419007.view.FragmentProfil"
         android:label="Profil"
-        tools:layout="@layout/fragment_profil" />
+        tools:layout="@layout/fragment_profil" >
+        <action
+            android:id="@+id/actionEditProfil"
+            app:destination="@id/fragmentEditProfil" />
+        <action
+            android:id="@+id/action_itemAkun_to_activityLogin"
+            app:destination="@id/activityLogin"
+            app:popUpTo="@id/activityLogin"
+            app:popUpToInclusive="true" />
+    </fragment>
     <fragment
         android:id="@+id/itemResepku"
         android:name="id.ac.ubaya.informatika.midtermproject_160419007.view.FragmentResepku"
@@ -37,6 +46,9 @@
         <action
             android:id="@+id/action_itemResepku_to_fragmentTambahResepku"
             app:destination="@id/fragmentTambahResepku" />
+        <action
+            android:id="@+id/action_itemResepku_to_fragmentEditResepku"
+            app:destination="@id/fragmentEditResepku" />
     </fragment>
     <fragment
         android:id="@+id/fragmentTambahResepku"
@@ -51,5 +63,32 @@
         <argument
             android:name="foodName"
             app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentEditProfil"
+        android:name="id.ac.ubaya.informatika.midtermproject_160419007.view.FragmentEditProfil"
+        android:label="fragment_edit_profil"
+        tools:layout="@layout/fragment_edit_profil" >
+        <action
+            android:id="@+id/actionAkun"
+            app:destination="@id/itemAkun"
+            app:popUpTo="@id/itemAkun"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <activity
+        android:id="@+id/activityLogin"
+        android:name="id.ac.ubaya.informatika.midtermproject_160419007.view.ActivityLogin"
+        android:label="activity_login"
+        tools:layout="@layout/activity_login" />
+    <fragment
+        android:id="@+id/fragmentEditResepku"
+        android:name="id.ac.ubaya.informatika.midtermproject_160419007.view.FragmentEditResepku"
+        android:label="fragment_edit_resepku"
+        tools:layout="@layout/fragment_edit_resepku" >
+        <action
+            android:id="@+id/action_fragmentEditResepku_to_itemResepku"
+            app:destination="@id/itemResepku"
+            app:popUpTo="@id/itemResepku"
+            app:popUpToInclusive="true" />
     </fragment>
 </navigation>

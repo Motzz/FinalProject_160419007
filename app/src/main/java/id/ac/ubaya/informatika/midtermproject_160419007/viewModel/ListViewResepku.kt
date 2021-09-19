@@ -14,7 +14,7 @@ import id.ac.ubaya.informatika.midtermproject_160419007.model.Resep
 import id.ac.ubaya.informatika.midtermproject_160419007.model.Resepku
 
 class ListViewResepku(application: Application): AndroidViewModel(application)  {
-    val ResepKuLD = MutableLiveData<List<Resep>>()//live data
+    val ResepKuLD = MutableLiveData<List<Resepku>>()//live data
     val loadingErrorKuLD = MutableLiveData<Boolean>()
     val loadingKuLD= MutableLiveData<Boolean>()
 
@@ -30,8 +30,8 @@ class ListViewResepku(application: Application): AndroidViewModel(application)  
             Request.Method.GET,url,
             //kalo berahsil
             {response ->
-                val sType=object : TypeToken<List<Resep>>(){ }.type
-                val result= Gson().fromJson<List<Resep>>(response,sType)
+                val sType=object : TypeToken<List<Resepku>>(){ }.type
+                val result= Gson().fromJson<List<Resepku>>(response,sType)
                 ResepKuLD.value=result
 
                 loadingKuLD.value=false

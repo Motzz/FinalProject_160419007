@@ -7,13 +7,15 @@ import android.view.View
 import android.view.ViewGroup
 import id.ac.ubaya.informatika.midtermproject_160419007.R
 
+class FragmentEditResepku : Fragment() {
 
-class FragmentTambahResepku : Fragment() {
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_tambah_resepku, container, false)
+        return inflater.inflate(R.layout.fragment_edit_resepku, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
