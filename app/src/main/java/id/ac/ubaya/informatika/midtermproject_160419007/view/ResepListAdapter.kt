@@ -34,6 +34,7 @@ class ResepListAdapter(val resepList: ArrayList<Resep>): RecyclerView.Adapter<Re
         {
             txtCardNamaMakanan.text=resepList[position].name
             imageView2.loadImage(resepList[position].imageURL.toString(),holder.view.progressLoadResep)
+            btnLike.text=resepList[position].like
 
             btnDetailResep.setOnClickListener {
                 val action = FragmentHomeDirections.actionFragmentDetail(resepList[position].name.toString())//kirim data id

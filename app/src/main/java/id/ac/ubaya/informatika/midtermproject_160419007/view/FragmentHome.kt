@@ -14,6 +14,7 @@ import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import id.ac.ubaya.informatika.midtermproject_160419007.R
 import id.ac.ubaya.informatika.midtermproject_160419007.model.Global
 import id.ac.ubaya.informatika.midtermproject_160419007.viewModel.ListViewModel
+import id.ac.ubaya.informatika.midtermproject_160419007.viewModel.ListViewResepku
 import kotlinx.android.synthetic.main.fragment_home.*
 
 
@@ -39,6 +40,7 @@ class FragmentHome : Fragment() {
 
         viewModel = ViewModelProvider(this).get(ListViewModel::class.java)//nama class view model
         viewModel.refresh()//load data
+
         //default layout
         val lm = LinearLayoutManager(context)
         //buat kalo mau kesamping aja
@@ -48,8 +50,9 @@ class FragmentHome : Fragment() {
         //kalo make straggle grid
         val sg = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
 
-        recView.layoutManager = sg
+        recView.layoutManager = glm
         recView.adapter=ResepListAdapt
+
         //untuk refresh
         refreshLayout.setOnRefreshListener {
             recView.visibility=View.GONE
@@ -89,11 +92,14 @@ class FragmentHome : Fragment() {
                 progressLoad.visibility=View.VISIBLE
                 recView.visibility=View.GONE
 
+
             }
             else
             {
                 progressLoad.visibility=View.GONE
                 recView.visibility=View.VISIBLE
+
+
             }
         })
     }

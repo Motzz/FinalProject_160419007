@@ -4,4 +4,5 @@ object Global {
     var username=""
     var foodName=""
     var editFoodName=""
+    var notifku=""
 }
