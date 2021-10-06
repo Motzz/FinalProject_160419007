@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.graphics.toColorInt
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
@@ -37,10 +38,8 @@ class FragmentHome : Fragment() {
         txtNameHome.text="Hello ${Global.username} Have a nice Day !"
 
         //tambahan in
-
         viewModel = ViewModelProvider(this).get(ListViewModel::class.java)//nama class view model
         viewModel.refresh()//load data
-
         //default layout
         val lm = LinearLayoutManager(context)
         //buat kalo mau kesamping aja
@@ -61,11 +60,7 @@ class FragmentHome : Fragment() {
             viewModel.refresh()
             refreshLayout.isRefreshing = false
         }
-
         observeViewModel()
-
-
-
 
     }
     fun observeViewModel() {
