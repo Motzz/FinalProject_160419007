@@ -1,5 +1,6 @@
 package id.ac.ubaya.informatika.midtermproject_160419007.view
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.core.app.NotificationCompat
@@ -64,5 +65,11 @@ class MainActivity : AppCompatActivity() {
         //dikarenakan ada drawer layout,maka ditambahkan drawerlayout
         //
         return NavigationUI.navigateUp(navController,drawerLayout) || super.onSupportNavigateUp()//nambah drawer layout untuk side bar
+    }
+    override fun onBackPressed() {
+        val intent = Intent(Intent.ACTION_MAIN)//akses home
+        intent.addCategory(Intent.CATEGORY_HOME)//menambah kategori home agar ketika di back langsung menuju home
+        intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP//menghapus history activity yang dibuka
+        startActivity(intent)
     }
 }
