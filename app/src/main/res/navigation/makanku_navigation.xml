@@ -12,7 +12,9 @@
         tools:layout="@layout/fragment_home" >
         <action
             android:id="@+id/actionFragmentDetail"
-            app:destination="@id/fragmentDetailResep" />
+            app:destination="@id/fragmentDetailResep"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim" />
     </fragment>
     <fragment
         android:id="@+id/itemNotifikasi"
@@ -30,10 +32,13 @@
         tools:layout="@layout/fragment_profil" >
         <action
             android:id="@+id/actionEditProfil"
-            app:destination="@id/fragmentEditProfil" />
+            app:destination="@id/fragmentEditProfil"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_pop_exit_anim" />
         <action
             android:id="@+id/action_itemAkun_to_activityLogin"
             app:destination="@id/activityLogin"
+            app:enterAnim="@anim/nav_default_enter_anim"
             app:popUpTo="@id/activityLogin"
             app:popUpToInclusive="true" />
     </fragment>
@@ -44,10 +49,14 @@
         tools:layout="@layout/fragment_resepku" >
         <action
             android:id="@+id/action_itemResepku_to_fragmentTambahResepku"
-            app:destination="@id/fragmentTambahResepku" />
+            app:destination="@id/fragmentTambahResepku"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
         <action
             android:id="@+id/action_itemResepku_to_fragmentEditResepku"
-            app:destination="@id/fragmentEditResepku" />
+            app:destination="@id/fragmentEditResepku"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_pop_exit_anim" />
     </fragment>
     <fragment
         android:id="@+id/fragmentTambahResepku"
@@ -57,6 +66,8 @@
         <action
             android:id="@+id/action_fragmentTambahResepku_to_itemResepku"
             app:destination="@id/itemResepku"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_pop_exit_anim"
             app:popUpTo="@id/itemResepku"
             app:popUpToInclusive="true" />
     </fragment>
@@ -68,6 +79,11 @@
         <argument
             android:name="foodName"
             app:argType="string" />
+        <action
+            android:id="@+id/action_fragmentDetailResep_to_itemHome"
+            app:destination="@id/itemHome"
+            app:popUpTo="@id/itemHome"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/fragmentEditProfil"
@@ -77,6 +93,8 @@
         <action
             android:id="@+id/actionAkun"
             app:destination="@id/itemAkun"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_pop_exit_anim"
             app:popUpTo="@id/itemAkun"
             app:popUpToInclusive="true" />
     </fragment>
@@ -93,6 +111,8 @@
         <action
             android:id="@+id/action_fragmentEditResepku_to_itemResepku"
             app:destination="@id/itemResepku"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
             app:popUpTo="@id/itemResepku"
             app:popUpToInclusive="true" />
         <argument

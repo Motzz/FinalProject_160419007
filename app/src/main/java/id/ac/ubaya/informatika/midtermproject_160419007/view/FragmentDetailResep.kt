@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.Navigation
 import id.ac.ubaya.informatika.midtermproject_160419007.R
 import id.ac.ubaya.informatika.midtermproject_160419007.model.Global
 import id.ac.ubaya.informatika.midtermproject_160419007.util.loadImage
@@ -33,6 +34,12 @@ class FragmentDetailResep : Fragment() {
         viewModel = ViewModelProvider(this).get(DetailListResep::class.java)
         viewModel.fetch()
         observeViewModel()
+
+        btnBackDetailRes.setOnClickListener {
+            val action = FragmentDetailResepDirections.actionFragmentDetailResepToItemHome()
+            //hanya nav controller yang bisa mengontrol host nya
+            Navigation.findNavController(it).navigate(action)
+        }
     }
 
     fun observeViewModel() {
