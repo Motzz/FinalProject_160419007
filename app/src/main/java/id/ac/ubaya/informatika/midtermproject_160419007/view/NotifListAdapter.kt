@@ -34,7 +34,7 @@ class NotifListAdapter(val notif:ArrayList<notif>):RecyclerView.Adapter<NotifLis
         with(holder.view)
         {
             txtNotif.text=notif[position].notifku
-            Global.notifku=notif[position].notifku.toString()
+            Global.notifku=notif[0].notifku.toString()
 
             btnCheck.isVisible = notif[position].pesan != ""
             btnCheck.setOnClickListener {
