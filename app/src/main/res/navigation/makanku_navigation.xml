@@ -72,8 +72,8 @@
     <fragment
         android:id="@+id/fragmentEditProfil"
         android:name="id.ac.ubaya.informatika.midtermproject_160419007.view.FragmentEditProfil"
-        android:label="fragment_edit_profil"
-        tools:layout="@layout/fragment_edit_profil" >
+        android:label="Edit Profil"
+        tools:layout="@layout/fragment_edit_profil">
         <action
             android:id="@+id/actionAkun"
             app:destination="@id/itemAkun"
@@ -88,8 +88,8 @@
     <fragment
         android:id="@+id/fragmentEditResepku"
         android:name="id.ac.ubaya.informatika.midtermproject_160419007.view.FragmentEditResepku"
-        android:label="fragment_edit_resepku"
-        tools:layout="@layout/fragment_edit_resepku" >
+        android:label="Edit Resep"
+        tools:layout="@layout/fragment_edit_resepku">
         <action
             android:id="@+id/action_fragmentEditResepku_to_itemResepku"
             app:destination="@id/itemResepku"
@@ -102,7 +102,7 @@
     <dialog
         android:id="@+id/newsBottomFragment2"
         android:name="id.ac.ubaya.informatika.midtermproject_160419007.view.NewsBottomFragment"
-        android:label="fragment_news_bottom"
+        android:label="News!"
         tools:layout="@layout/fragment_news_bottom" />
         <action
             android:id="@+id/action_newsBottomFragment2_to_itemNotifikasi"
