@@ -36,7 +36,7 @@
                     android:layout_marginStart="32dp"
                     android:layout_marginTop="32dp"
                     android:layout_marginEnd="32dp"
-                    android:text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam eligendi maiores ratione accusamus tenetur ducimus ad iste, perspiciatis veritatis autem esse dolorem deleniti quos in. Similique, nostrum minus? Iusto, eveniet! Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam eligendi maiores ratione accusamus tenetur ducimus ad iste, perspiciatis veritatis autem esse dolorem deleniti quos in. Similique, nostrum minus? Iusto, eveniet! Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam eligendi maiores ratione accusamus tenetur ducimus ad iste, perspiciatis veritatis autem esse dolorem deleniti quos in. Similique, nostrum minus? Iusto, eveniet! "
+                    android:text="Now, vegans, vegetarians, and anyone watching their meat intake can rejoice again! Burger King is extending its line of Impossible selections with a plant-based nugget, and they are the first fast food chain to do it. It's not a permanent part of the menu yet: Select locations in Des Moines, IA, Boston, MA and Miami, FL will get the first taste of the Impossible Nuggets starting on October 11. Each order comes with eight pieces with your choice of dipping sauce. Think crispy breading and a juicy and tender interior dunked in honey mustard or sweet and sour sauce... only without the chicken, of course."
                     android:textAppearance="@style/body2"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
