@@ -5,4 +5,6 @@ object Global {
     var foodName=""
     var editFoodName=""
     var notifku=""
+
+    var resultLogin=""
 }

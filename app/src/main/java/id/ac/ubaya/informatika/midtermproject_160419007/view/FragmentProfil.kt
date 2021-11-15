@@ -5,15 +5,18 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
 import id.ac.ubaya.informatika.midtermproject_160419007.R
 import id.ac.ubaya.informatika.midtermproject_160419007.model.Global
 import id.ac.ubaya.informatika.midtermproject_160419007.util.loadImage
+import id.ac.ubaya.informatika.midtermproject_160419007.viewModel.ProfilViewModel
 import kotlinx.android.synthetic.main.fragment_detail_resep.*
 import kotlinx.android.synthetic.main.fragment_profil.*
 
 
 class FragmentProfil : Fragment() {
+    private lateinit var  viewModel: ProfilViewModel
 
 
     override fun onCreateView(
@@ -31,6 +34,7 @@ class FragmentProfil : Fragment() {
         txtFollowers.text="5"
         txtFollowing.text="20"
         imageViewProfils.loadImage("http://img.sndimg.com/food/image/upload/w_266/v1/img/recipes/50/84/7/picMcSyVd.jpg")
+        //viewModel= ViewModelProvider(this).get(viewModel::class.java)
 
         btnSettings.setOnClickListener {
             val action = FragmentProfilDirections.actionEditProfil()

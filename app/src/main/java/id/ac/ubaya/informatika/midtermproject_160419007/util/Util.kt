@@ -7,9 +7,11 @@ import android.os.Build
 import android.view.View
 import android.widget.ImageView
 import android.widget.ProgressBar
+import androidx.room.Room
 import com.squareup.picasso.Callback
 import com.squareup.picasso.Picasso
 import id.ac.ubaya.informatika.midtermproject_160419007.R
+import id.ac.ubaya.informatika.midtermproject_160419007.model.UserDatabase
 
 fun ImageView.loadImage(url:String, progressBar: ProgressBar) {
 
@@ -49,4 +51,14 @@ fun createNotificationChannel(context: Context, importance: Int, showBadge:Boole
         val notificationManager =context.getSystemService(NotificationManager::class.java)
         notificationManager.createNotificationChannel(channel)
     }
+}
+
+val DB_NAME="newuserdb"
+
+fun buildDB(context: Context): UserDatabase {
+    val db = Room.databaseBuilder(context,UserDatabase::class.java, DB_NAME)
+        .addMigrations()
+        .build()
+
+    return db
 }

@@ -26,10 +26,6 @@ class FragmentEditProfil : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         imageViewEditProfils.loadImage("http://img.sndimg.com/food/image/upload/w_266/v1/img/recipes/50/84/7/picMcSyVd.jpg")
-        txtNameProf.setText("Timothy")
-        txtEmailProf.setText("Surabaya2020@gmail.com")
-        txtTglLahirProf.setText("11/04/01")
-        txtPwdProf.setText("123456")
 
         btnUpdate.setOnClickListener {
             val action = FragmentEditProfilDirections.actionAkun()

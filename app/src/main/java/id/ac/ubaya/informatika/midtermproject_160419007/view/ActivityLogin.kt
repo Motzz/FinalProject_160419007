@@ -14,21 +14,21 @@ class ActivityLogin : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
-        btnLogin.setOnClickListener {
-            if(txtUsername.text.toString()=="Timothy"&&txtPwd.text.toString()=="123456")
-            {
-                startActivity(Intent(this, MainActivity::class.java))
-                Global.username=txtUsername.text.toString()
-            }
-            else
-            {
-                Toast.makeText(applicationContext, "Username/Password anda salah", Toast.LENGTH_LONG).show()
-            }
-
-        }
-        btnRegister.setOnClickListener {
-            startActivity(Intent(this, ActivityRegister::class.java))
-        }
+//        btnLogin.setOnClickListener {
+//            if(txtUsername.text.toString()=="Timothy"&&txtPwd.text.toString()=="123456")
+//            {
+//                startActivity(Intent(this, MainActivity::class.java))
+//                Global.username=txtUsername.text.toString()
+//            }
+//            else
+//            {
+//                Toast.makeText(applicationContext, "Username/Password anda salah", Toast.LENGTH_LONG).show()
+//            }
+//
+//        }
+//        btnRegister.setOnClickListener {
+//            startActivity(Intent(this, ActivityRegister::class.java))
+//        }
     }
     override fun onBackPressed() {
         val intent = Intent(Intent.ACTION_MAIN)//akses home

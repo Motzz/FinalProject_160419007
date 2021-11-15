@@ -1,5 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/login_navigation">
-
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/login_navigation"
+    app:startDestination="@id/fragmentLogin">
+    <fragment
+        android:id="@+id/fragmentLogin"
+        android:name="id.ac.ubaya.informatika.midtermproject_160419007.view.FragmentLogin"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/actionMainActivity"
+            app:destination="@id/mainActivity" />
+        <action
+            android:id="@+id/actionFragmentRegister"
+            app:destination="@id/fragment_Register" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment_Register"
+        android:name="id.ac.ubaya.informatika.midtermproject_160419007.view.Fragment_Register"
+        android:label="fragment__register"
+        tools:layout="@layout/fragment__register" >
+        <action
+            android:id="@+id/actionFragmentLogin"
+            app:destination="@id/fragmentLogin" />
+    </fragment>
+    <activity
+        android:id="@+id/mainActivity"
+        android:name="id.ac.ubaya.informatika.midtermproject_160419007.view.MainActivity"
+        android:label="MainActivity" />
 </navigation>
