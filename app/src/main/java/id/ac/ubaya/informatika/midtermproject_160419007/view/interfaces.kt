@@ -11,3 +11,10 @@ interface UserRegisterListener {
     fun onUserRegister(v:View)
 }
 
+interface UserEditProfil{
+    fun onUserEditProfil(v:View)
+}
+interface SaveChangesUserListener{
+    fun onSaveChangesUser(v:View,obj: User)
+}
+

@@ -26,10 +26,25 @@ class ProfilViewModel(application: Application): AndroidViewModel(application), 
         }
 
     }
+    fun userEma(username: String)
+    {
+        launch{
+            val db = buildDB(getApplication())//pemanggilan database dari util
+            userLD.value=db.profilDao().selectUserStr(username)
+        }
+
+    }
     fun register(user: User) {
         launch {
             val db = buildDB(getApplication())//pemanggilan database dari util
             db.profilDao().insertAll(user)
+        }
+    }
+    fun update(username: String,email:String,pass:String,img: String,idP: Int)
+    {
+        launch {
+            val db= buildDB(getApplication())
+            db.profilDao().update(username,email,pass,img,idP)
         }
     }
 
@@ -37,7 +52,6 @@ class ProfilViewModel(application: Application): AndroidViewModel(application), 
     {
         launch {
             val db= buildDB(getApplication())//pemanggilan database dari util
-
             if(user==""&&pass=="")
             {
                 result="NO"

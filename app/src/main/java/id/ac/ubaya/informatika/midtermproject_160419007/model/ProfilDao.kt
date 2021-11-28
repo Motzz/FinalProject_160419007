@@ -13,6 +13,16 @@ interface ProfilDao {
     @Query("SELECT * FROM user WHERE idP= :id")
     suspend fun selectUser(id:Int): User
 
+    @Query("SELECT * FROM user WHERE username= :username")
+    suspend fun selectUserStr(username:String): User
+
+    @Query("UPDATE user SET username=:username,email=:email,pass=:pass,ImageUrl=:ImageUrl WHERE idP=:id")
+    suspend fun update(username:String,email:String,pass:String,ImageUrl:String,id: Int)
+
+
+    @Query("SELECT * FROM user WHERE username=:username")
+    suspend fun selectUsername(username:String): User
+
     @Query("SELECT * FROM user WHERE username=:user AND pass=:pass")
     suspend fun selectLogin(user: String,pass:String): User
 }

@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="user"
+            type="id.ac.ubaya.informatika.midtermproject_160419007.model.User"/>
+        <variable
+            name="listener"
+            type="id.ac.ubaya.informatika.midtermproject_160419007.view.SaveChangesUserListener" />
+    </data>
+
+
+<FrameLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".view.FragmentEditProfil">
@@ -43,6 +54,7 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/txtNameProf"
+                android:text="@={user.username}"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -67,6 +79,7 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/txtEmailProf"
+                android:text="@={user.email}"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -93,6 +106,33 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/txtPwdProf"
+                android:text="@={user.pass}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayout7"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:hint="Img URL"
+            app:boxCornerRadiusBottomEnd="20dp"
+            app:boxCornerRadiusBottomStart="20dp"
+            app:boxCornerRadiusTopEnd="20dp"
+            app:boxCornerRadiusTopStart="20dp"
+            app:hintAnimationEnabled="true"
+            app:hintEnabled="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout8">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txtImgProf"
+                android:text="@={user.imageUrl}"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
         </com.google.android.material.textfield.TextInputLayout>
@@ -101,12 +141,15 @@
             android:id="@+id/btnUpdate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="12dp"
             android:layout_marginEnd="16dp"
             android:text="UPDATE"
+            android:onClick="@{(view)->listener.onSaveChangesUser(view,user)}"
             app:cornerRadius="20dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textInputLayout8" />
+            app:layout_constraintTop_toBottomOf="@+id/textInputLayout7" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>
+
+</layout>
