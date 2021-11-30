@@ -10,6 +10,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import id.ac.ubaya.informatika.midtermproject_160419007.R
+import id.ac.ubaya.informatika.midtermproject_160419007.model.UserResep
 import id.ac.ubaya.informatika.midtermproject_160419007.viewModel.ListViewModel
 import id.ac.ubaya.informatika.midtermproject_160419007.viewModel.ListViewResepku
 import kotlinx.android.synthetic.main.fragment_home.*
@@ -20,7 +21,12 @@ import kotlinx.android.synthetic.main.fragment_resepku.view.*
 class FragmentResepku : Fragment() {
 
     private lateinit var viewModelKu: ListViewResepku
-    private  val ResepKuListAdapt = ResepKuListAdapter(arrayListOf())
+    private  val ResepKuListAdapt = ResepKuListAdapter(arrayListOf(),{ item -> doClick(item)})
+
+    fun doClick(item:Any)//untuk delete
+    {
+        viewModelKu.clearResep(item as UserResep)
+    }
 
 
     override fun onCreateView(
@@ -57,32 +63,13 @@ class FragmentResepku : Fragment() {
     fun observeViewModel() {
         viewModelKu.ResepKuLD.observe(viewLifecycleOwner, Observer {
             ResepKuListAdapt.updateResepKu(it)//parameter 1=ownernya,2=observer(data list resepku)
-        })
-
-        //kalo ada error di loadingnya
-        viewModelKu.loadingErrorKuLD.observe(viewLifecycleOwner, Observer {
-            if(it)
+            if(it.isEmpty())
             {
                 txtErrorKu.visibility=View.VISIBLE
             }
             else
             {
                 txtErrorKu.visibility=View.GONE
-            }
-        })
-
-        //progress load
-        viewModelKu.loadingKuLD.observe(viewLifecycleOwner, Observer {
-            if(it)//kalo lagi loading
-            {
-                ProgressLoadKu.visibility=View.VISIBLE
-                recViewKu.visibility=View.GONE
-
-            }
-            else
-            {
-                ProgressLoadKu.visibility=View.GONE
-                recViewKu.visibility=View.VISIBLE
             }
         })
     }

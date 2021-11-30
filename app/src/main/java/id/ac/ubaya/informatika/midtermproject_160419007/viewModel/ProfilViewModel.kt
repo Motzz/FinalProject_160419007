@@ -13,13 +13,13 @@ import kotlinx.coroutines.launch
 import kotlin.coroutines.CoroutineContext
 
 class ProfilViewModel(application: Application): AndroidViewModel(application), CoroutineScope {
-    private val job = Job()
     val userLD= MutableLiveData<User>()
 
     var result=""
 
     fun fetch(idP: Int)
     {
+
         launch{
             val db = buildDB(getApplication())//pemanggilan database dari util
             userLD.value=db.profilDao().selectUser(idP)
@@ -72,7 +72,7 @@ class ProfilViewModel(application: Application): AndroidViewModel(application), 
 
         }
     }
-
+    private var job = Job()
     override val coroutineContext: CoroutineContext
         get() = job + Dispatchers.Main
 }

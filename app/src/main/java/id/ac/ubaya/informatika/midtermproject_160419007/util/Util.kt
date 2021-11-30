@@ -7,11 +7,13 @@ import android.os.Build
 import android.view.View
 import android.widget.ImageView
 import android.widget.ProgressBar
+import androidx.databinding.BindingAdapter
 import androidx.room.Room
 import com.squareup.picasso.Callback
 import com.squareup.picasso.Picasso
 import id.ac.ubaya.informatika.midtermproject_160419007.R
 import id.ac.ubaya.informatika.midtermproject_160419007.model.UserDatabase
+import id.ac.ubaya.informatika.midtermproject_160419007.model.UserResepDtabase
 
 fun ImageView.loadImage(url:String, progressBar: ProgressBar) {
 
@@ -40,7 +42,16 @@ fun ImageView.loadImage(url:String) {
             .error(R.drawable.ic_baseline_error_24)
 
 }
+@BindingAdapter("android:imageUrl","android:progressBar")
+fun loadPhotoUrl(v:ImageView,url:String?,pb:ProgressBar)
+{
+    if(url!=null)
+    {
+        v.loadImage(url!!,pb)
+    }
 
+
+}
 fun createNotificationChannel(context: Context, importance: Int, showBadge:Boolean, name: String, description: String) {
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O)
     {
@@ -59,6 +70,16 @@ fun buildDB(context: Context): UserDatabase {
     val db = Room.databaseBuilder(context,UserDatabase::class.java, DB_NAME)
         .addMigrations()
         .build()
+
+    return db
+}
+
+val DB_NAME2="newresepdb"
+
+fun buildDB2(context: Context): UserResepDtabase {
+    val db = Room.databaseBuilder(context,UserResepDtabase::class.java, DB_NAME2)
+            .addMigrations()
+            .build()
 
     return db
 }

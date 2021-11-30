@@ -7,6 +7,9 @@
             name="user"
             type="id.ac.ubaya.informatika.midtermproject_160419007.model.User"/>
         <variable
+            name="listener"
+            type="id.ac.ubaya.informatika.midtermproject_160419007.view.UserLogout" />
+        <variable
             name="editListener"
             type="id.ac.ubaya.informatika.midtermproject_160419007.view.UserEditProfil" />
     </data>
@@ -112,6 +115,7 @@
             android:layout_marginTop="16dp"
             android:layout_marginEnd="16dp"
             android:text="LOG OUT"
+            android:onClick="@{listener::onUserLogout}"
             app:cornerRadius="20dp"
             app:icon="@drawable/ic_baseline_arrow_back_24"
             app:layout_constraintEnd_toEndOf="parent"

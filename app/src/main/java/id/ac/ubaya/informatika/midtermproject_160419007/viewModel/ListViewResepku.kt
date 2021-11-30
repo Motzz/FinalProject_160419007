@@ -12,16 +12,100 @@ import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import id.ac.ubaya.informatika.midtermproject_160419007.model.Resep
 import id.ac.ubaya.informatika.midtermproject_160419007.model.Resepku
+import id.ac.ubaya.informatika.midtermproject_160419007.model.UserResep
+import id.ac.ubaya.informatika.midtermproject_160419007.util.buildDB2
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.launch
+import kotlin.coroutines.CoroutineContext
 
-class ListViewResepku(application: Application): AndroidViewModel(application)  {
-    val ResepKuLD = MutableLiveData<List<Resepku>>()//live data
+class ListViewResepku(application: Application): AndroidViewModel(application), CoroutineScope {
+    val ResepKuLD = MutableLiveData<List<UserResep>>()//live data
     val loadingErrorKuLD = MutableLiveData<Boolean>()
     val loadingKuLD= MutableLiveData<Boolean>()
 
-    private val TAGKu = "VolleyTag"//terserah variable nya
+    fun refresh() { //method untuk select all dari kueri todoDao
+        loadingKuLD.value = true
+        loadingErrorKuLD.value = false
+        launch {
+            val db = buildDB2(getApplication())//pemanggilan database
+            ResepKuLD.value = db.resepUserDao().selectAllUserResep()//dan select all lagi
+        }
+    }
+
+    fun clearResep(userResep: UserResep) { //method kueri untuk delete
+       launch{
+           val db = buildDB2(getApplication())//pemanggilan database
+           db.resepUserDao().deleteResep(userResep)
+           ResepKuLD.value = db.resepUserDao().selectAllUserResep()//dan select all lagi
+       }
+    }
+
+    private var job = Job()
+    override val coroutineContext: CoroutineContext
+        get() = job + Dispatchers.Main//
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /*private val TAGKu = "VolleyTag"//terserah variable nya
     private var queueKu: RequestQueue?=null
 
-    fun refresh() {
+      fun refresh() {
         loadingKuLD.value = true
         loadingErrorKuLD.value = false
         queueKu= Volley.newRequestQueue(getApplication())
@@ -50,5 +134,5 @@ class ListViewResepku(application: Application): AndroidViewModel(application)  
     override fun onCleared() {
         super.onCleared()
         queueKu?.cancelAll(TAGKu)
-    }
+    }*/
 }

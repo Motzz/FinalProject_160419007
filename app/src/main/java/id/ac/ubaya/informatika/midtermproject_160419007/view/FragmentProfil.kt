@@ -18,7 +18,7 @@ import kotlinx.android.synthetic.main.fragment_detail_resep.*
 import kotlinx.android.synthetic.main.fragment_profil.*
 
 
-class FragmentProfil : Fragment(),UserEditProfil {
+class FragmentProfil : Fragment(),UserEditProfil,UserLogout {
     private lateinit var  viewModel: ProfilViewModel
     private lateinit var  dataBinding:FragmentProfilBinding
 
@@ -38,23 +38,8 @@ class FragmentProfil : Fragment(),UserEditProfil {
         viewModel.userEma(Global.username)
         dataBinding.editListener=this
         observerViewModel()
-       /* txtUsernameProfil.text=Global.username*/
-       /* txtYummy.text="20"
-        txtFollowers.text="5"
-        txtFollowing.text="20"*/
         //imageViewProfils.loadImage("http://img.sndimg.com/food/image/upload/w_266/v1/img/recipes/50/84/7/picMcSyVd.jpg")
-        //viewModel= ViewModelProvider(this).get(viewModel::class.java)
 
-       /* btnSettings.setOnClickListener {
-            val action = FragmentProfilDirections.actionEditProfil()
-            //hanya nav controller yang bisa mengontrol host nya
-           Navigation.findNavController(it).navigate(action)
-        }*/
-        btnLogOut.setOnClickListener {
-            val action = FragmentProfilDirections.actionItemAkunToActivityLogin()
-            //hanya nav controller yang bisa mengontrol host nya
-            Navigation.findNavController(it).navigate(action)
-        }
 
 
     }
@@ -66,6 +51,12 @@ class FragmentProfil : Fragment(),UserEditProfil {
 
     override fun onUserEditProfil(v: View) {
         val action = FragmentProfilDirections.actionEditProfil()
+        Navigation.findNavController(v).navigate(action)
+    }
+
+    override fun onUserLogout(v: View) {
+        val action = FragmentProfilDirections.actionItemAkunToActivityLogin()
+        //hanya nav controller yang bisa mengontrol host nya
         Navigation.findNavController(v).navigate(action)
     }
 

@@ -28,21 +28,7 @@ class FragmentLogin : Fragment(),UserRegisterListener,UserLoginListener {
         dataBinding= DataBindingUtil.inflate<FragmentLoginBinding>(inflater,R.layout.fragment_login, container, false)
         return dataBinding.root
     }
-    //        btnLogin.setOnClickListener {
-//            if(txtUsername.text.toString()=="Timothy"&&txtPwd.text.toString()=="123456")
-//            {
-//                startActivity(Intent(this, MainActivity::class.java))
-//                Global.username=txtUsername.text.toString()
-//            }
-//            else
-//            {
-//                Toast.makeText(applicationContext, "Username/Password anda salah", Toast.LENGTH_LONG).show()
-//            }
-//
-//        }
-//        btnRegister.setOnClickListener {
-//            startActivity(Intent(this, ActivityRegister::class.java))
-//        }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         viewModel= ViewModelProvider(this).get(ProfilViewModel::class.java)
@@ -57,11 +43,11 @@ class FragmentLogin : Fragment(),UserRegisterListener,UserLoginListener {
 
          if (viewModel.result=="NO")
          {
-             /*Toast.makeText(v.context, "please insert the username and password", Toast.LENGTH_LONG).show()*/
+             Toast.makeText(v.context, "please insert the username and password", Toast.LENGTH_LONG).show()
          }
          else if(viewModel.result=="WRONG")
          {
-            /* Toast.makeText(v.context, "Wrong Username or Password", Toast.LENGTH_LONG).show()*/
+             Toast.makeText(v.context, "Wrong Username or Password", Toast.LENGTH_LONG).show()
          }
          else if(viewModel.result=="OK")
          {
@@ -69,7 +55,7 @@ class FragmentLogin : Fragment(),UserRegisterListener,UserLoginListener {
              Navigation.findNavController(v).navigate(action)
              Global.username=dataBinding?.user!!.username
 
-             Toast.makeText(v.context, "${Global.username}", Toast.LENGTH_LONG).show()
+             /*Toast.makeText(v.context, "${Global.username}", Toast.LENGTH_LONG).show()*/
          }
 
 
