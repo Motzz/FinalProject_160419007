@@ -16,8 +16,8 @@ interface ProfilDao {
     @Query("SELECT * FROM user WHERE username= :username")
     suspend fun selectUserStr(username:String): User
 
-    @Query("UPDATE user SET username=:username,email=:email,pass=:pass,ImageUrl=:ImageUrl WHERE idP=:id")
-    suspend fun update(username:String,email:String,pass:String,ImageUrl:String,id: Int)
+    @Query("UPDATE user SET username=:username,email=:email,pass=:pass,ImageUrl=:ImageUrl,date=:date WHERE idP=:id")
+    suspend fun update(username:String,email:String,pass:String,ImageUrl:String,date:String,id: Int)
 
 
     @Query("SELECT * FROM user WHERE username=:username")

@@ -40,11 +40,11 @@ class ProfilViewModel(application: Application): AndroidViewModel(application), 
             db.profilDao().insertAll(user)
         }
     }
-    fun update(username: String,email:String,pass:String,img: String,idP: Int)
+    fun update(username: String,email:String,pass:String,img: String,date:String,idP: Int)
     {
         launch {
             val db= buildDB(getApplication())
-            db.profilDao().update(username,email,pass,img,idP)
+            db.profilDao().update(username,email,pass,img,date,idP)
         }
     }
 

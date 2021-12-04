@@ -34,7 +34,7 @@ class FragmentLogin : Fragment(),UserRegisterListener,UserLoginListener {
         viewModel= ViewModelProvider(this).get(ProfilViewModel::class.java)
         dataBinding.listener=this
         dataBinding.listener1=this
-        dataBinding.user= User("","","","")
+        dataBinding.user= User("","","","","")
     }
 
     override fun onUserLogin(v: View) {

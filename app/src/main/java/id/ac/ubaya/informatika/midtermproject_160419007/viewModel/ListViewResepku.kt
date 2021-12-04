@@ -1,17 +1,8 @@
 package id.ac.ubaya.informatika.midtermproject_160419007.viewModel
 
 import android.app.Application
-import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
-import com.android.volley.Request
-import com.android.volley.RequestQueue
-import com.android.volley.toolbox.StringRequest
-import com.android.volley.toolbox.Volley
-import com.google.gson.Gson
-import com.google.gson.reflect.TypeToken
-import id.ac.ubaya.informatika.midtermproject_160419007.model.Resep
-import id.ac.ubaya.informatika.midtermproject_160419007.model.Resepku
 import id.ac.ubaya.informatika.midtermproject_160419007.model.UserResep
 import id.ac.ubaya.informatika.midtermproject_160419007.util.buildDB2
 import kotlinx.coroutines.CoroutineScope

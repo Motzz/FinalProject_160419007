@@ -14,7 +14,10 @@ data class User(
     @ColumnInfo(name = "pass")
     var pass:String,
     @ColumnInfo(name = "ImageUrl")
-    var ImageUrl:String
+    var ImageUrl:String,
+    @ColumnInfo(name="date")
+    var date:String
+
     ){
     @PrimaryKey(autoGenerate = true)
     var idP:Int=0

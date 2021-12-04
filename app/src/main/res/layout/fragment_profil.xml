@@ -77,9 +77,10 @@
                     android:layout_marginTop="32dp"
                     android:background="@drawable/ic_baseline_person_24"
                     android:scaleType="centerCrop"
+                    android:imageUrl="@{user.imageUrl}"
+                    android:progressBar="@{progressBarAkun}"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:src="@drawable/ic_baseline_person_24" />
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/txtUsernameProfil"
@@ -103,6 +104,16 @@
                     android:textAppearance="@style/body3"
                     app:layout_constraintStart_toEndOf="@+id/imageViewProfils"
                     app:layout_constraintTop_toBottomOf="@+id/txtUsernameProfil" />
+
+                <ProgressBar
+                    android:id="@+id/progressBarAkun"
+                    style="?android:attr/progressBarStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="@+id/imageViewProfils"
+                    app:layout_constraintEnd_toEndOf="@+id/imageViewProfils"
+                    app:layout_constraintStart_toStartOf="@+id/imageViewProfils"
+                    app:layout_constraintTop_toTopOf="@+id/imageViewProfils" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>

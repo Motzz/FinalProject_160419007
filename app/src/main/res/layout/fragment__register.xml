@@ -10,6 +10,9 @@
         <variable
             name="user"
             type="id.ac.ubaya.informatika.midtermproject_160419007.model.User" />
+        <variable
+            name="listener_date"
+            type="id.ac.ubaya.informatika.midtermproject_160419007.view.UserDateClickListener" />
 
     </data>
 
@@ -35,8 +38,8 @@
 
             <ImageView
                 android:id="@+id/imageView3"
-                android:layout_width="0dp"
-                android:layout_height="229dp"
+                android:layout_width="281dp"
+                android:layout_height="162dp"
                 android:layout_marginStart="64dp"
                 android:layout_marginTop="24dp"
                 android:layout_marginEnd="64dp"
@@ -110,6 +113,7 @@
                 app:boxCornerRadiusBottomStart="60px"
                 app:boxCornerRadiusTopEnd="60px"
                 app:boxCornerRadiusTopStart="60px"
+                app:endIconMode="password_toggle"
                 app:hintEnabled="true"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -119,8 +123,7 @@
                     android:id="@+id/txtPwdRegis"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@={user.pass}"
-                   />
+                    android:text="@={user.pass}" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -146,8 +149,36 @@
                     android:id="@+id/txtUrlGambar"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="@={user.imageUrl}"
-                   />
+                    android:text="@={user.imageUrl}" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayout12"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="32dp"
+                android:hint="Birthday Date"
+                app:boxCornerRadiusBottomEnd="60px"
+                app:boxCornerRadiusBottomStart="60px"
+                app:boxCornerRadiusTopEnd="60px"
+                app:boxCornerRadiusTopStart="60px"
+                app:endIconDrawable="@drawable/ic_baseline_calendar_today_24"
+                app:endIconMode="custom"
+                app:hintAnimationEnabled="true"
+                app:hintEnabled="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout9">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/txtTglLahir"
+                    android:onClick="@{listener_date::onUserDateClick}"
+                    android:text="@={user.date}"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <Button
@@ -155,15 +186,15 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="32dp"
-                android:layout_marginTop="19dp"
+                android:layout_marginTop="16dp"
                 android:layout_marginEnd="32dp"
-                android:text="register"
                 android:onClick="@{listener::onUserRegister}"
+                android:text="register"
                 app:cornerRadius="60dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textInputLayout9" />
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout12" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

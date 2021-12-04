@@ -22,6 +22,9 @@ interface UserLogout{
     fun onUserLogout(v:View)
 }
 
+interface UserDateClickListener{
+    fun onUserDateClick(v:View)
+}
 /*===================================For user resep=====================================*/
 
 interface UserResepEdit{
