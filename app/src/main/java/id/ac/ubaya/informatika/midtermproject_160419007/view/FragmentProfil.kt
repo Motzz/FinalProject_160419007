@@ -37,6 +37,7 @@ class FragmentProfil : Fragment(),UserEditProfil,UserLogout {
         viewModel= ViewModelProvider(this).get(ProfilViewModel::class.java)
         viewModel.userEma(Global.username)
         dataBinding.editListener=this
+        dataBinding.listener=this
         observerViewModel()
         //imageViewProfils.loadImage("http://img.sndimg.com/food/image/upload/w_266/v1/img/recipes/50/84/7/picMcSyVd.jpg")
 

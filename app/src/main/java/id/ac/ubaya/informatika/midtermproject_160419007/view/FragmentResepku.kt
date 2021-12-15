@@ -1,17 +1,18 @@
 package id.ac.ubaya.informatika.midtermproject_160419007.view
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
+import android.text.Editable
+import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import id.ac.ubaya.informatika.midtermproject_160419007.R
 import id.ac.ubaya.informatika.midtermproject_160419007.model.UserResep
-import id.ac.ubaya.informatika.midtermproject_160419007.viewModel.ListViewModel
 import id.ac.ubaya.informatika.midtermproject_160419007.viewModel.ListViewResepku
 import kotlinx.android.synthetic.main.fragment_home.*
 import kotlinx.android.synthetic.main.fragment_resepku.*
@@ -21,9 +22,9 @@ import kotlinx.android.synthetic.main.fragment_resepku.view.*
 class FragmentResepku : Fragment() {
 
     private lateinit var viewModelKu: ListViewResepku
-    private  val ResepKuListAdapt = ResepKuListAdapter(arrayListOf(),{ item -> doClick(item)})
+    private  val ResepKuListAdapt = ResepKuListAdapter(arrayListOf(), { item -> doClick(item) })
 
-    fun doClick(item:Any)//untuk delete
+    fun doClick(item: Any)//untuk delete
     {
         viewModelKu.clearResep(item as UserResep)
     }
@@ -60,16 +61,16 @@ class FragmentResepku : Fragment() {
 
         observeViewModel()
     }
+
+
+
     fun observeViewModel() {
         viewModelKu.ResepKuLD.observe(viewLifecycleOwner, Observer {
             ResepKuListAdapt.updateResepKu(it)//parameter 1=ownernya,2=observer(data list resepku)
-            if(it.isEmpty())
-            {
-                txtErrorKu.visibility=View.VISIBLE
-            }
-            else
-            {
-                txtErrorKu.visibility=View.GONE
+            if (it.isEmpty()) {
+                txtErrorKu.visibility = View.VISIBLE
+            } else {
+                txtErrorKu.visibility = View.GONE
             }
         })
     }

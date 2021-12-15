@@ -61,7 +61,7 @@ dependencies {
     implementation 'androidx.room:room-ktx:2.3.0'
 
 
-
+    implementation "androidx.work:work-runtime-ktx:2.5.0"
     implementation'androidx.multidex:multidex:2.0.1'
     implementation "io.reactivex.rxjava3:rxjava:3.0.11"// rx java
     implementation 'io.reactivex.rxjava3:rxandroid:3.0.0'// rx java

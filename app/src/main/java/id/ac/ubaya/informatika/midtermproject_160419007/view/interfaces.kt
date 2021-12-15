@@ -39,6 +39,9 @@ interface  UserDeleteResep{
 interface  UserUpdateResep{
     fun onUserUpdateResep(v:View,obj: UserResep)
 }
+interface  UserPindahAdd{
+    fun onUserPindahAdd(v:View)
+}
 /*===================================For resep=====================================*/
 interface ResepDetail{
     fun onResepDetail(v:View)

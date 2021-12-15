@@ -65,7 +65,7 @@ class FragmentEditProfil : Fragment(),SaveChangesUserListener,UserDateClickListe
         val c = Calendar.getInstance()
         //c.set(year,moth,day,hour,minute,0)
         //val today=Calendar.getInstance()
-        dataBinding?.user!!.date=c.toString()
+        //dataBinding?.user!!.date=c.toString()
         viewModel.update(obj.username,obj.email,obj.pass,obj.ImageUrl,obj.date,obj.idP)
         Toast.makeText(v.context,"Profil updated", Toast.LENGTH_SHORT).show()
         val action = FragmentEditProfilDirections.actionAkun()
@@ -85,7 +85,7 @@ class FragmentEditProfil : Fragment(),SaveChangesUserListener,UserDateClickListe
     override fun onDateSet(view: DatePicker?, year: Int, month: Int, dayOfMonth: Int) {
         Calendar.getInstance().let {
             it.set(year,month,dayOfMonth)
-            dataBinding.root.txtTglLahir.setText(dayOfMonth.toString().padStart(2,'0')+"-"+
+            dataBinding?.root!!.txtTglProf.setText(dayOfMonth.toString().padStart(2,'0')+"-"+
                     (month+1).toString().padStart(2,'0')+"-"+
                     year.toString().padStart(2,'0'))
             this.year=year

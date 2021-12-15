@@ -17,15 +17,6 @@
             app:exitAnim="@anim/nav_default_exit_anim" />
     </fragment>
     <fragment
-        android:id="@+id/itemNotifikasi"
-        android:name="id.ac.ubaya.informatika.midtermproject_160419007.view.FragmentNotifikasi"
-        android:label="Notifikasi"
-        tools:layout="@layout/fragment_notifikasi" >
-        <action
-            android:id="@+id/action_itemNotifikasi_to_newsBottomFragment2"
-            app:destination="@id/newsBottomFragment2" />
-    </fragment>
-    <fragment
         android:id="@+id/itemAkun"
         android:name="id.ac.ubaya.informatika.midtermproject_160419007.view.FragmentProfil"
         android:label="Profil"
@@ -119,15 +110,5 @@
             android:name="NamaMakananEdit"
             app:argType="string" />
     </fragment>
-    <dialog
-        android:id="@+id/newsBottomFragment2"
-        android:name="id.ac.ubaya.informatika.midtermproject_160419007.view.NewsBottomFragment"
-        android:label="News!"
-        tools:layout="@layout/fragment_news_bottom" />
-        <action
-            android:id="@+id/action_newsBottomFragment2_to_itemNotifikasi"
-            app:destination="@id/itemNotifikasi"
-            app:popUpTo="@id/itemNotifikasi"
-            app:popUpToInclusive="true" />
 
 </navigation>

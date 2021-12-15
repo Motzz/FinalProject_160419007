@@ -8,6 +8,7 @@ import id.ac.ubaya.informatika.midtermproject_160419007.util.buildDB2
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
+import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.launch
 import kotlin.coroutines.CoroutineContext
 
@@ -31,6 +32,13 @@ class ListViewResepku(application: Application): AndroidViewModel(application), 
            db.resepUserDao().deleteResep(userResep)
            ResepKuLD.value = db.resepUserDao().selectAllUserResep()//dan select all lagi
        }
+    }
+
+    fun cariResep(searchResepii:String) {
+        launch {
+            val db = buildDB2(getApplication())//pemanggilan database
+            ResepKuLD.value = db.resepUserDao().searchResep(searchResepii)//dan select all lagi
+        }
     }
 
     private var job = Job()

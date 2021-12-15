@@ -13,11 +13,6 @@
         android:title="Resepku"
         app:showAsAction="always" />
     <item
-        android:id="@+id/itemNotifikasi"
-        android:icon="@drawable/ic_baseline_notifications_active_24"
-        android:title="Notifikasi"
-        app:showAsAction="always" />
-    <item
         android:id="@+id/itemAkun"
         android:icon="@drawable/ic_baseline_person_24"
         android:title="Akun"
