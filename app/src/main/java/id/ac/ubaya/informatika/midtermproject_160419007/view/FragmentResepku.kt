@@ -6,11 +6,14 @@ import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.widget.SearchView
+import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import id.ac.ubaya.informatika.midtermproject_160419007.R
 import id.ac.ubaya.informatika.midtermproject_160419007.model.UserResep
 import id.ac.ubaya.informatika.midtermproject_160419007.viewModel.ListViewResepku
@@ -19,10 +22,13 @@ import kotlinx.android.synthetic.main.fragment_resepku.*
 import kotlinx.android.synthetic.main.fragment_resepku.view.*
 
 
-class FragmentResepku : Fragment() {
+class FragmentResepku : Fragment()/*SearchView.OnQueryTextListener,*/{
 
     private lateinit var viewModelKu: ListViewResepku
     private  val ResepKuListAdapt = ResepKuListAdapter(arrayListOf(), { item -> doClick(item) })
+   // private lateinit var  dataBinding:FragmentResepkuBinding
+
+    private lateinit var swipe:SwipeRefreshLayout
 
     fun doClick(item: Any)//untuk delete
     {
@@ -36,6 +42,8 @@ class FragmentResepku : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_resepku, container, false)
+      /*  dataBinding= DataBindingUtil.inflate(inflater,R.layout.fragment_resepku, container, false)
+        return dataBinding.root*/
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -43,6 +51,8 @@ class FragmentResepku : Fragment() {
 
         viewModelKu = ViewModelProvider(this).get(ListViewResepku::class.java)
         viewModelKu.refresh()//load data
+
+       // dataBinding.viewModelRefresh
 
         recViewKu.layoutManager = LinearLayoutManager(context)
         recViewKu.adapter=ResepKuListAdapt
@@ -58,7 +68,6 @@ class FragmentResepku : Fragment() {
             val action = FragmentResepkuDirections.actionItemResepkuToFragmentTambahResepku()
             Navigation.findNavController(it).navigate(action)
         }
-
         observeViewModel()
     }
 
@@ -69,11 +78,65 @@ class FragmentResepku : Fragment() {
             ResepKuListAdapt.updateResepKu(it)//parameter 1=ownernya,2=observer(data list resepku)
             if (it.isEmpty()) {
                 txtErrorKu.visibility = View.VISIBLE
+                ProgressLoadKu.visibility=View.VISIBLE
+                recViewKu.visibility=View.GONE
             } else {
                 txtErrorKu.visibility = View.GONE
+                ProgressLoadKu.visibility=View.GONE
+                recViewKu.visibility=View.VISIBLE
             }
         })
     }
 
+  /*  override fun onUserPindahAdd(v: View) {
+        val action = FragmentResepkuDirections.actionItemResepkuToFragmentTambahResepku()
+        Navigation.findNavController(v).navigate(action)
+    }
+
+    override fun onRefresh() {
+        recViewKu.visibility=View.GONE
+        txtErrorKu.visibility=View.GONE
+        ProgressLoadKu.visibility=View.VISIBLE
+        viewModelKu.refresh()
+        refreshLayoutKu.isRefreshing = false
+    }
+
+    override fun onRefreshResepku(r: SwipeRefreshLayout.OnRefreshListener) {
+        recViewKu.visibility=View.GONE
+        txtErrorKu.visibility=View.GONE
+        ProgressLoadKu.visibility=View.VISIBLE
+        viewModelKu.refresh()
+        refreshLayoutKu.isRefreshing = false
+    }*/
+
+
+    /* override fun onQueryTextSubmit(query: String?): Boolean {
+         if (query!=null)
+         {
+             search()
+         }
+         return true
+     }
+
+     override fun onQueryTextChange(newText: String?): Boolean {
+         if (newText!=null)
+         {
+             search()
+         }
+         return true
+     }
+
+     private fun search()
+     {
+         val kueri= txtSearch.text.toString()
+         val cari= "%$kueri%"
+         viewModelKu.cariResep(cari)
+     }*/
+
+
+
+}
+
+private fun SwipeRefreshLayout.setRefresing(b: Boolean) {
 
 }

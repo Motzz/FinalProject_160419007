@@ -66,6 +66,7 @@ class FragmentHome : Fragment() {
     fun observeViewModel() {
         viewModel.ResepLD.observe(viewLifecycleOwner, Observer {
             ResepListAdapt.updateResepList(it)//parameter 1=ownernya,2=observer(data list resep)
+
         })
 
         //kalo ada error di loadingnya

@@ -1,6 +1,7 @@
 package id.ac.ubaya.informatika.midtermproject_160419007.view
 
 import android.view.View
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import id.ac.ubaya.informatika.midtermproject_160419007.model.User
 import id.ac.ubaya.informatika.midtermproject_160419007.model.UserResep
 
@@ -41,6 +42,9 @@ interface  UserUpdateResep{
 }
 interface  UserPindahAdd{
     fun onUserPindahAdd(v:View)
+}
+interface  RefreshResepku{
+    fun onRefreshResepku(r:SwipeRefreshLayout.OnRefreshListener)
 }
 /*===================================For resep=====================================*/
 interface ResepDetail{

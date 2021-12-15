@@ -3,6 +3,7 @@ package id.ac.ubaya.informatika.midtermproject_160419007.viewModel
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
+import id.ac.ubaya.informatika.midtermproject_160419007.model.ResepUserDao
 import id.ac.ubaya.informatika.midtermproject_160419007.model.UserResep
 import id.ac.ubaya.informatika.midtermproject_160419007.util.buildDB2
 import kotlinx.coroutines.CoroutineScope
@@ -14,6 +15,7 @@ import kotlin.coroutines.CoroutineContext
 class DetailListResepku(application: Application): AndroidViewModel(application),CoroutineScope {
 
     val resepLDku = MutableLiveData<UserResep>()
+
 
     //week9
     fun fetch(idR:Int)
