@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout  xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="Resep"
+            type="id.ac.ubaya.informatika.midtermproject_160419007.model.Resep"/>
+        <variable
+            name="listener"
+            type="id.ac.ubaya.informatika.midtermproject_160419007.view.ResepDetail"/>
+    </data>
+
+<androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
@@ -35,6 +45,8 @@
 
             <ImageView
                 android:id="@+id/imageView2"
+                android:imageUrl="@{Resep.imageURL}"
+                android:progressBar="@{progressLoadResep}"
                 android:layout_width="0dp"
                 android:layout_height="170dp"
                 android:scaleType="centerCrop"
@@ -49,7 +61,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
-                android:text="TextView"
+                android:text="@{Resep.name}"
                 android:textAppearance="@style/heading2"
                 android:textSize="14sp"
                 app:layout_constraintStart_toStartOf="parent"
@@ -57,6 +69,8 @@
 
             <Button
                 android:id="@+id/btnDetailResep"
+                android:onClick="@{listener::onResepDetail}"
+                android:tag="@{Resep.name}"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
@@ -66,18 +80,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <Button
-                android:id="@+id/btnLike"
-                style="@style/Widget.MaterialComponents.Button.TextButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginBottom="8dp"
-                android:text="0"
-                app:icon="@drawable/ic_baseline_thumb_up_24"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
-
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

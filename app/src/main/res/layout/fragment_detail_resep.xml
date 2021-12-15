@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="Resep"
+            type="id.ac.ubaya.informatika.midtermproject_160419007.model.Resep"/>
+        <variable
+            name="listener"
+            type="id.ac.ubaya.informatika.midtermproject_160419007.view.BackResep"/>
+    </data>
+
+<FrameLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/resepku"
@@ -21,6 +31,8 @@
                 android:layout_width="0dp"
                 android:layout_height="200dp"
                 android:scaleType="centerCrop"
+                android:imageUrl="@{Resep.imageURL}"
+                android:progressBar="@{progressBarDetailResep}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -32,7 +44,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="32dp"
-                android:text="TextView"
+                android:text="@{Resep.name}"
                 android:textAppearance="@style/heading1"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/imageViewDetailResep" />
@@ -41,9 +53,8 @@
                 android:id="@+id/txtIngridients"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
-                android:text="TextView"
+                android:text="@{Resep.ingredients.toString()+`\n\n`}"
                 android:textAppearance="@style/body2"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView" />
@@ -54,7 +65,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
-                android:text="TextView"
+                android:text="@{Resep.steps.toString()+`\n\n`}"
                 android:textAppearance="@style/body3"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView4" />
@@ -98,6 +109,7 @@
                 android:layout_marginStart="32dp"
                 android:layout_marginTop="178dp"
                 android:layout_marginEnd="32dp"
+                android:onClick="@{listener::onBackResep}"
                 android:text="Back"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -106,3 +118,5 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 </FrameLayout>
+
+</layout>

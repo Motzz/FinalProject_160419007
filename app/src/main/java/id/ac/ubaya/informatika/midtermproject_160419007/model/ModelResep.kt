@@ -4,7 +4,7 @@ data class Resep(
         val name:String?,
         val ingredients:ArrayList<String>?,
         val steps:ArrayList<String>?,
-        val imageURL:String?,
-        val like:String?
+        val imageURL:String?/*,
+        val like:String?*/
 
 )

@@ -39,4 +39,11 @@ interface  UserDeleteResep{
 interface  UserUpdateResep{
     fun onUserUpdateResep(v:View,obj: UserResep)
 }
+/*===================================For resep=====================================*/
+interface ResepDetail{
+    fun onResepDetail(v:View)
+}
+interface BackResep{
+    fun onBackResep(v:View)
+}
 
