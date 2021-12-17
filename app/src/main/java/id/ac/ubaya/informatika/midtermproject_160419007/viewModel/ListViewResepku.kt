@@ -34,12 +34,12 @@ class ListViewResepku(application: Application): AndroidViewModel(application), 
        }
     }
 
-    /*fun cariResep(searchResepii:String) {
+    fun cariResep(searchResepii:String) {
         launch {
             val db = buildDB2(getApplication())//pemanggilan database
             ResepKuLD.value = db.resepUserDao().searchResep(searchResepii)
         }
-    }*/
+    }
 
     private var job = Job()
     override val coroutineContext: CoroutineContext

@@ -22,7 +22,7 @@ import kotlinx.android.synthetic.main.fragment_resepku.*
 import kotlinx.android.synthetic.main.fragment_resepku.view.*
 
 
-class FragmentResepku : Fragment()/*SearchView.OnQueryTextListener,*/{
+class FragmentResepku : Fragment()/*,SearchView.OnQueryTextListener*/{
 
     private lateinit var viewModelKu: ListViewResepku
     private  val ResepKuListAdapt = ResepKuListAdapter(arrayListOf(), { item -> doClick(item) })
@@ -68,7 +68,16 @@ class FragmentResepku : Fragment()/*SearchView.OnQueryTextListener,*/{
             val action = FragmentResepkuDirections.actionItemResepkuToFragmentTambahResepku()
             Navigation.findNavController(it).navigate(action)
         }
+        btnCari.setOnClickListener {
+            search()
+        }
         observeViewModel()
+    }
+    private fun search()
+    {
+        val kueri= txtSearch.text.toString()
+        val cari= "%$kueri%"
+        viewModelKu.cariResep(cari)
     }
 
 
@@ -110,7 +119,7 @@ class FragmentResepku : Fragment()/*SearchView.OnQueryTextListener,*/{
     }*/
 
 
-    /* override fun onQueryTextSubmit(query: String?): Boolean {
+     /*override fun onQueryTextSubmit(query: String?): Boolean {
          if (query!=null)
          {
              search()
@@ -124,14 +133,9 @@ class FragmentResepku : Fragment()/*SearchView.OnQueryTextListener,*/{
              search()
          }
          return true
-     }
-
-     private fun search()
-     {
-         val kueri= txtSearch.text.toString()
-         val cari= "%$kueri%"
-         viewModelKu.cariResep(cari)
      }*/
+
+
 
 
 

@@ -17,8 +17,8 @@ interface ResepUserDao {
     @Query("UPDATE UserResep SET nama=:nama,bahan=:bahan,cara=:cara,ImageURL=:ImageURL WHERE idR=:idR")
     suspend fun update(nama:String,bahan:String,cara:String,ImageURL:String,idR:Int)
 
-    /*@Query("SELECT * FROM UserResep WHERE nama LIKE :cariResep ")
-    suspend fun searchResep(cariResep:String): List<UserResep>*/
+    @Query("SELECT * FROM UserResep WHERE nama LIKE :cariResep ")
+    suspend fun searchResep(cariResep:String): List<UserResep>
 
     @Delete
     suspend fun  deleteResep(userResep: UserResep)

@@ -51,6 +51,7 @@ class FragmentLogin : Fragment(),UserRegisterListener,UserLoginListener {
          }
          else if(viewModel.result=="OK")
          {
+             Toast.makeText(v.context, "Welcome!!", Toast.LENGTH_LONG).show()
              val action = FragmentLoginDirections.actionMainActivity()
              Navigation.findNavController(v).navigate(action)
              Global.username=dataBinding?.user!!.username
